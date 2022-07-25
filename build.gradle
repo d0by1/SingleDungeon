@@ -1,0 +1,68 @@
+plugins {
+    id 'java'
+    id 'io.freefair.lombok' version '6.5.0.2'
+}
+
+group = 'me.d0by'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://repo.codemc.io/repository/nms/' }
+    maven { url = 'https://oss.sonatype.org/content/groups/public/' }
+    maven { url = 'https://libraries.minecraft.net/' }
+    maven { url = 'https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync' }
+    maven { url = 'https://mvnrepository.com/artifact/org.mongodb/bson' }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot:1.18.2-R0.1-SNAPSHOT'
+    implementation 'org.mongodb:mongodb-driver-sync:4.7.0'
+    implementation 'org.mongodb:bson:4.7.0'
+
+    // Annotations
+    compileOnly 'org.jetbrains:annotations:23.0.0'
+    annotationProcessor 'org.jetbrains:annotations:23.0.0'
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+
+def targetJavaVersion = 17
+java {
+    def javaVersion = JavaVersion.toVersion(targetJavaVersion)
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+    if (JavaVersion.current() < javaVersion) {
+        toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
+        options.release = targetJavaVersion
+    }
+}
+
+processResources {
+    def props = [version: project.version]
+    inputs.properties props
+    filteringCharset 'UTF-8'
+    filesMatching('plugin.yml') {
+        expand props
+    }
+}
+
+jar {
+    dependsOn configurations.runtimeClasspath
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    archivesBaseName = rootProject.name
+    from {
+        configurations.runtimeClasspath.findAll {
+            it.name.endsWith('jar')
+        }.collect {
+            zipTree(it)
+        }
+    }
+}

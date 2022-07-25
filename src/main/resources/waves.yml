@@ -1,0 +1,34 @@
+test_wave_1:
+  duration: 120
+  monsters:
+    - 'test_monster_1'
+    - 'test_monster_1'
+    - 'test_monster_1'
+    - 'test_monster_2'
+    - 'test_monster_2'
+test_wave_2:
+  duration: 120
+  monsters:
+    - 'test_monster_1'
+    - 'test_monster_1'
+    - 'test_monster_1'
+    - 'test_monster_1'
+    - 'test_monster_1'
+    - 'test_monster_2'
+    - 'test_monster_2'
+    - 'test_monster_2'
+test_wave_3:
+  duration: 120
+  monsters:
+    - 'test_monster_1'
+    - 'test_monster_1'
+    - 'test_monster_1'
+    - 'test_monster_1'
+    - 'test_monster_1'
+    - 'test_monster_1'
+    - 'test_monster_1'
+    - 'test_monster_2'
+    - 'test_monster_2'
+    - 'test_monster_2'
+    - 'test_monster_2'
+    - 'test_monster_2'

@@ -1,0 +1,24 @@
+test:
+  # Location of where the player will be placed when they enter the dungeon
+  spawn:
+    world: world
+    x: 0.5
+    y: 100
+    z: 0.5
+    yaw: 90
+    pitch: 0
+  # Location of where monsters will spawn
+  wave_spawn:
+    world: world
+    x: 20.5
+    y: 100
+    z: 0.5
+    yaw: -90
+    pitch: 0
+  # Time in seconds before the dungeon starts
+  prepare_time: 30
+  # The waves that will be used in the dungeon
+  waves:
+    - 'test_wave_1'
+    - 'test_wave_2'
+    - 'test_wave_3'

@@ -1,0 +1,45 @@
+test_monster_1:
+  type: ZOMBIE
+  name: Zombie
+  health: 20
+  items:
+    helmet:
+      material: IRON_HELMET
+      enchantments:
+        PROTECTION_ENVIRONMENTAL: 1
+    chestplate:
+      material: IRON_CHESTPLATE
+      enchantments:
+        PROTECTION_ENVIRONMENTAL: 1
+    leggings:
+      material: IRON_LEGGINGS
+      enchantments:
+        PROTECTION_ENVIRONMENTAL: 1
+    boots:
+      material: IRON_BOOTS
+      enchantments:
+        PROTECTION_ENVIRONMENTAL: 1
+    mainhand:
+      material: STONE_SWORD
+      enchantments:
+        DAMAGE_ALL: 2
+        KNOCKBACK: 1
+test_monster_2:
+  type: SKELETON
+  name: Skeleton
+  health: 20
+  items:
+    helmet:
+      material: LEATHER_HELMET
+    chestplate:
+      material: LEATHER_CHESTPLATE
+    leggings:
+      material: LEATHER_LEGGINGS
+    boots:
+      material: LEATHER_BOOTS
+    mainhand:
+      material: BOW
+      enchantments:
+        ARROW_DAMAGE: 2
+        ARROW_KNOCKBACK: 1
+        ARROW_INFINITE: 1

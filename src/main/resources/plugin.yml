@@ -1,0 +1,11 @@
+main: me.d0by.singledungeon.SingleDungeon
+name: SingleDungeon
+version: '${version}'
+api-version: 1.18
+prefix: SingleDungeon
+authors: [ d0by ]
+
+commands:
+  start:
+    usage: /start <dungeon>
+    description: Starts a dungeon
